@@ -1,6 +1,6 @@
 # arch crate
 
-> A crate help you to write a os that support multiple platforms.
+> 支持多架构的 hal 层 crate.
 
 English | [中文简体](./README.CN.md)
 
@@ -18,38 +18,38 @@ English | [中文简体](./README.CN.md)
 
 ## Example
 
-Here is an simple example in the example dir.
+在 example 文件夹中存在一个简单的 example.
 
 ### Run
 
 ``` shell
 cd example
-# Run on riscv64
+# 运行 riscv64 架构
 make ARCH=riscv64 run
-# Run on x86_64
+# 运行 x86_64 架构
 make ARCH=x86_64 run
-# Run on aarch64
+# 运行 aarch64 架构
 make ARCH=aarch64 run
-# Run on loongarch64
+# 运行 loongarch64 架构
 make ARCH=loongarch64 run
 ```
-
 ## Used OS
 
 ### ByteOS
 
-How to run?
+下面介绍怎么运行
 
-##### Prepare
+##### 环境准备
 
 ```shell
 git clone https://github.com/Byte-OS/ByteOS.git
 cd ByteOS
 git reset 655eef3e38b5a85baaab4b2ba33832fbb299f19a --hard
 git clone https://github.com/Byte-OS/arch.git
+git reset cabff90bc4aecb7c8d3decb408c64e898112f6fe --hard
 ```
 
-##### Run on a specific platform
+##### 运行在一个特定的平台
 
 run on riscv64
 
@@ -57,20 +57,23 @@ run on riscv64
 make ARCH=riscv64 LOG=error run
 ```
 
-Change ARCH value if you want to run on another platform.
+如果想要运行在别的平台上，那么将 ARCH 改为其他值。
 
 ### rCore-tutorial-v3 ch7
 
-##### Prepare
+##### 环境准备
 
 ```shell
 git clone https://github.com/yfblock/rcore-tutorial-v3-with-hal-component.git
 git reset fe2c146dedeadcc5fa9db8402128e066e45ca5a9 --hard
 git clone https://github.com/Byte-OS/arch.git
+git reset cabff90bc4aecb7c8d3decb408c64e898112f6fe --hard
 ```
 
-##### Run on a specific platform
+##### 运行在一个特定平台上
 
 ```shell
 make ARCH=riscv64 run
 ```
+
+目前 tutorial 中存在一些 log, 并不影响运行。turorial 中可以使用测试程序 usertests 运行。
